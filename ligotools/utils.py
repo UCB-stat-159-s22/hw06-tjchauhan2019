@@ -1,10 +1,10 @@
 import numpy as np
 from scipy.io import wavfile
+import matplotlib.pyplot as plt
 
 #function to whiten data
 def whiten(strain, interp_psd, dt):
     Nt = len(strain)
-    print(Nt)
     freqs = np.fft.rfftfreq(Nt, dt)
     freqs1 = np.linspace(0,2048.,Nt/2+1)
 
@@ -34,3 +34,4 @@ def reqshift(data,fshift=100,sample_rate=4096):
     y[0:nbins]=0.
     z = np.fft.irfft(y)
     return z
+
