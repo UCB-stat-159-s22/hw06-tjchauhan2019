@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: ligotools
+Version: 0.2
+Summary: A Python library to make read ligotools
+Home-page: UNKNOWN
+Author: Ligo Scientific Collaboration (LSC) and Kshitij Chauhan (TJ)
+Author-email: tjchauhan2019@berkeley.edu
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: tools,ligotools
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Operating System :: OS Independent
+Requires-Python: >=2.7

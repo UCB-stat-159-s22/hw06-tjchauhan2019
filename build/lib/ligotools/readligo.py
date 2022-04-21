@@ -115,6 +115,8 @@ def read_hdf5(filename, readstrain=True):
     """
     Helper function to read HDF5 files
     """
+    import pkg_resources
+    pkg_resources.require("h5py==`2.9.0")
     import h5py
     dataFile = h5py.File(filename, 'r')
 
@@ -129,18 +131,18 @@ def read_hdf5(filename, readstrain=True):
     #-- Read the DQ information
     dqInfo = dataFile['quality']['simple']
     qmask = dqInfo['DQmask'][...]
-    shortnameArray = dqInfo['DQShortnames'][()]
+    shortnameArray = dqInfo['DQShortnames'].value
     shortnameList  = list(shortnameArray)
     
     # -- Read the INJ information
     injInfo = dataFile['quality/injections']
     injmask = injInfo['Injmask'][...]
-    injnameArray = injInfo['InjShortnames'][()]
+    injnameArray = injInfo['InjShortnames'].value
     injnameList  = list(injnameArray)
     
     #-- Read the meta data
     meta = dataFile['meta']
-    gpsStart = meta['GPSstart'][()]   
+    gpsStart = meta['GPSstart'].value    
     
     dataFile.close()
     return strain, gpsStart, ts, qmask, shortnameList, injmask, injnameList
