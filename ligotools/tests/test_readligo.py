@@ -17,7 +17,7 @@ def test_dq_channel_to_seglist():
 def test_whiten():
     assert len(rl.loaddata(json.load(open("BBH_events_v3.json","r"))['GW150914']['fn_H1'],'H1')[0]) == 131072
 
-def test_write_wavfil():
+def test_write_wavfile():
     assert type(rl.loaddata(json.load(open("BBH_events_v3.json","r"))['GW150914']['fn_H1'],'H1')[0]) == numpy.ndarray
 
 def test_reqshift():
