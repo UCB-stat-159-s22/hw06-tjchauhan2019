@@ -1,3 +1,4 @@
+import numpy
 from ligotools import readligo as rl
 import json
 
@@ -12,3 +13,16 @@ def test_dq2segst():
 
 def test_dq_channel_to_seglist():
     assert type(rl.loaddata(json.load(open("BBH_events_v3.json","r"))['GW150914']['fn_H1'],'H1')[2]) == dict
+
+def test_whiten():
+    assert len(rl.loaddata(json.load(open("BBH_events_v3.json","r"))['GW150914']['fn_H1'],'H1')[0]) == 131072
+
+def test_write_wavfil():
+    assert type(rl.loaddata(json.load(open("BBH_events_v3.json","r"))['GW150914']['fn_H1'],'H1')[0]) == numpy.ndarray
+
+def test_reqshift():
+    assert type(rl.loaddata(json.load(open("BBH_events_v3.json","r"))['GW150914']['fn_H1'],'H1')[0]) == numpy.ndarray
+
+def test_plotting_results():
+    assert len(rl.loaddata(json.load(open("BBH_events_v3.json","r"))['GW150914']['fn_H1'],'H1')[1]) == 131072
+    
