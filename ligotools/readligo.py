@@ -129,18 +129,18 @@ def read_hdf5(filename, readstrain=True):
     #-- Read the DQ information
     dqInfo = dataFile['quality']['simple']
     qmask = dqInfo['DQmask'][...]
-    shortnameArray = dqInfo['DQShortnames'][()]
+    shortnameArray = dqInfo['DQShortnames'].value
     shortnameList  = list(shortnameArray)
     
     # -- Read the INJ information
     injInfo = dataFile['quality/injections']
     injmask = injInfo['Injmask'][...]
-    injnameArray = injInfo['InjShortnames'][()]
+    injnameArray = injInfo['InjShortnames'].value
     injnameList  = list(injnameArray)
     
     #-- Read the meta data
     meta = dataFile['meta']
-    gpsStart = meta['GPSstart'][()]   
+    gpsStart = meta['GPSstart'].value   
     
     dataFile.close()
     return strain, gpsStart, ts, qmask, shortnameList, injmask, injnameList
