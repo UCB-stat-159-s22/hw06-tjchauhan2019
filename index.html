@@ -1491,7 +1491,7 @@ this is the “audio” equivalent of the enhanced visuals that NASA employs on 
 <span class="k">if</span> <span class="n">data_segments</span><span class="p">:</span>
     <span class="c1"># read in the data at 4096 Hz:</span>
     <span class="c1"># fn = &#39;L-L1_LOSC_4_V1-1126259446-32.hdf5&#39;</span>
-    <span class="n">strain</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">chan_dict</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">loaddata</span><span class="p">(</span><span class="s1">&#39;../hw06-tjchauhan2019/data/&#39;</span> <span class="o">+</span> <span class="n">fn_L1</span><span class="p">,</span> <span class="s1">&#39;H1&#39;</span><span class="p">)</span>
+    <span class="n">strain</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">chan_dict</span> <span class="o">=</span> <span class="n">rl</span><span class="o">.</span><span class="n">loaddata</span><span class="p">(</span><span class="s1">&#39;data/&#39;</span> <span class="o">+</span> <span class="n">fn_L1</span><span class="p">,</span> <span class="s1">&#39;H1&#39;</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Contents of all the key, value pairs in chan_dict&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">keys</span><span class="p">,</span><span class="n">values</span> <span class="ow">in</span> <span class="n">chan_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
